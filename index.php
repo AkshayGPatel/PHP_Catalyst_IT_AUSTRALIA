@@ -25,16 +25,15 @@
                         <legend>Script Task (Import CSV File)</legend>
                         <!-- File Button -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="filebutton">Select File</label>
-                            <div class="col-md-4">
-                                <input type="file" name="file" id="file" class="input-large">
+                            <label class="col-md-1 control-label" for="filebutton">Select File</label>
+                            <div class="col-md-11">
+                                <input type="file" name="uploaded_file" id="uploaded_file" class="input-large">
                             </div>
                         </div>
                         <!-- Submit Button -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="singlebutton">Import data</label>
-                            <div class="col-md-4">
-                                <button type="submit" id="submit" name="Import" class="btn btn-primary button-loading"
+                            <div class="col-md-12">
+                                <button type="submit" id="submit" name="Import_CSV" class="btn btn-success   button-loading"
                                     data-loading-text="Loading...">Import</button>
                             </div>
                         </div>
@@ -45,7 +44,7 @@
             <div class="row">
                 <div class='table-responsive'>
                     <table id='myTable' class='table table-striped table-bordered'>
-                        <caption>UserList</caption>
+                    <legend>Display User List</legend>
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -56,7 +55,7 @@
                         <tbody>
                             <?php
                             // Get member rows from the database
-                            $result = $conn->query("SELECT * FROM users ORDER BY name ASC");
+                            $result = $conn->query("SELECT * FROM users ORDER BY id ASC");
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
                                     ?>
