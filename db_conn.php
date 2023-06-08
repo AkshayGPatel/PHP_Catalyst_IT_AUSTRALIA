@@ -5,7 +5,7 @@ $password = "";
 $dbname = "userlist";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password,$dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
@@ -26,9 +26,9 @@ $sql = "CREATE TABLE IF NOT EXISTS users (
   email VARCHAR(100) NOT NULL,
   UNIQUE KEY unique_email (email)
 );";
-  
-  if ($conn->query($sql) !== TRUE) {
-    echo "Error creating table: " . $conn->error;
-  }
+
+if ($conn->query($sql) !== TRUE) {
+  echo "Error creating table: " . $conn->error;
+}
 
 ?>
